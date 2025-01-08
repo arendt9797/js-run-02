@@ -30,7 +30,16 @@
 // TODO: groupBy 함수를 작성하세요.
 
 function groupBy(arr, key) {
-  // 여기에 코드를 작성하세요.
+  return arr.reduce((answer, element) => {
+    let answerKey = element[key]
+    if (answer.hasOwnProperty(answerKey)) {
+      answer[answerKey].push(element)
+    } else {
+      answer[answerKey] = []
+      answer[answerKey].push(element)
+    }
+    return answer
+  }, {})
 }
 
 // export를 수정하지 마세요.

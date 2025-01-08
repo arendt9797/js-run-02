@@ -15,7 +15,14 @@
 
 // TODO: chunkArray 함수를 작성하세요.
 function chunkArray(arr, size) {
-  // TODO
+  const answer = []
+  while (arr.length >= size) {
+    answer.push(arr.splice(0, size))
+  }
+  if (arr.length > 0) {
+    answer.push(arr)
+  }
+  return answer
 }
 
 // export를 수정하지 마세요.
